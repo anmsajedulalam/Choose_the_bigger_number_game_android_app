@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.example.a12201027.project1; 
+ 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.Random; 
+</span><span class="s0">import </span><span class="s1">java.util.Scanner; 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+    </span><span class="s0">int </span><span class="s1">score=</span><span class="s2">0</span><span class="s1">; 
+    Random r = </span><span class="s0">new </span><span class="s1">Random(); 
+    </span><span class="s0">int </span><span class="s1">left = r.nextInt(</span><span class="s2">80 </span><span class="s1">- </span><span class="s2">65</span><span class="s1">) + </span><span class="s2">65</span><span class="s1">; 
+    </span><span class="s0">int </span><span class="s1">right = r.nextInt(</span><span class="s2">80 </span><span class="s1">- </span><span class="s2">65</span><span class="s1">) + </span><span class="s2">65</span><span class="s1">; 
+    String Left=String.valueOf(left); 
+    String Right=String.valueOf(right); 
+ 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        TextView tv=(TextView)findViewById(R.id.Left); 
+        tv.setText(Left); 
+        TextView vt=(TextView)findViewById(R.id.Right); 
+        vt.setText(Right); 
+ 
+    } 
+    </span><span class="s0">public void </span><span class="s1">Left_click(View view) { 
+        TextView tv=(TextView)findViewById(R.id.Bottom); 
+        tv.setText(</span><span class="s3">&quot;Left&quot;</span><span class="s1">); 
+        </span><span class="s0">if</span><span class="s1">(left&gt;right) 
+        { 
+            score++; 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            score--; 
+        } 
+        TextView vt=(TextView)findViewById(R.id.Score); 
+        String Score=String.valueOf(score); 
+        vt.setText(Score); 
+    } 
+    </span><span class="s0">public void </span><span class="s1">Right_click(View view) { 
+        TextView tv=(TextView)findViewById(R.id.Up); 
+        tv.setText(</span><span class="s3">&quot;Right&quot;</span><span class="s1">); 
+        </span><span class="s0">if</span><span class="s1">(right&gt;left) 
+        { 
+            score++; 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            score--; 
+        } 
+        TextView vt=(TextView)findViewById(R.id.Score); 
+        String Score=String.valueOf(score); 
+        vt.setText(Score); 
+    } 
+ 
+} 
+</span></pre>
+</body>
+</html>
